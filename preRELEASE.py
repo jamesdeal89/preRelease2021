@@ -33,8 +33,24 @@ def displayBoard():
     print("CC",train3B[0], train3B[1]*seatsPerCoach, train3B[2], train3B[3])
     print("DD",train4B[0], train4B[1]*seatsPerCoach, train4B[2], train4B[3])
 
-def bookingDown():
+def checkTiming():
     input()
+
+def bookingDown():
+    displayBoard()
+    trainDown = input("chose train code down:")
+    if trainDown == "AB":
+        chosenTimeDown = train1B[0]
+        checkTiming()
+    elif trainDown == "BB":
+        chosenTimeDown = train2B[0]
+        checkTiming()
+    elif trainDown == "CB":
+        chosenTimeDown = train3B[0]
+        checkTiming()
+    elif trainDown == "DB":
+        chosenTimeDown = train4B[0]
+        checkTiming()
 
 while True:
     displayBoard()
