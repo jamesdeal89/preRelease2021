@@ -34,23 +34,23 @@ def displayBoard():
     print("DD",train4B[0], train4B[1]*seatsPerCoach, train4B[2], train4B[3])
 
 def bookingDown():
-    
+    input()
 
 while True:
     displayBoard()
     print("welcome to the ticket booking system:")
     trainUp = input("chose train code:")
     if trainUp == "A":
-        chosenTime = train1
+        chosenTime = train1[0]
         bookingDown()
     elif trainUp == "B":
-        chosenTime = train2
+        chosenTime = train2[0]
         bookingDown()
     elif trainUp == "C":
-        chosenTime = train3
+        chosenTime = train3[0]
         bookingDown()
     elif trainUp == "D":
-        chosenTime = train4
+        chosenTime = train4[0]
         bookingDown()
     else:
         print("please select only the code of the UP train and in CAPITALS")
