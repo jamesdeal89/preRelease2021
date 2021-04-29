@@ -38,7 +38,13 @@ def checkNumbers():
     while True:
         displayBoard()
         NumTickets = input("How many tickets are you booking?(CHECK AVALABILITY:")
-        if NumTickets <= chosenTrain[1]*seatsPerCoach-chosenTrain[2] and NumTickets <= chosenTrainDown[1]*seatsPerCoach-chosenTrainDown[2]
+        if NumTickets <= chosenTrain[1]*seatsPerCoach-chosenTrain[2] and NumTickets <= chosenTrainDown[1]*seatsPerCoach-chosenTrainDown[2]:
+            chosenTrain[2] += NumTickets
+            chosenTrainDown[2] += NumTickets
+        else:
+            print("that number of passengers is not possible, check avalability again and enter a new number")
+            input()
+
 
 def checkTiming():
     if chosenTrainDown[0] <= chosenTrain[0]:
