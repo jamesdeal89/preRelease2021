@@ -7,6 +7,7 @@
 # total eight trips
 
 # one array for each time
+chosenTimeDown = 0
 seatsPerCoach = 80
 price = 25
 # time, no. of coaches, tickets bought, total money
@@ -34,9 +35,15 @@ def displayBoard():
     print("DB",train4B[0], train4B[1]*seatsPerCoach, train4B[2], train4B[3])
 
 def checkTiming():
-    input()
+    if chosenTimeDown <= chosenTime:
+        print("you cannot choose a return train which is earlier than the first train. Try again.")
+        input()
+    else:
+        print("completed")
+        input()
 
 def bookingDown():
+    global chosenTimeDown
     while True:
         displayBoard()
         trainDown = input("chose train code down:")
