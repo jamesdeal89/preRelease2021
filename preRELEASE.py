@@ -24,21 +24,21 @@ def displayBoard():
     print("train information")
     print("code: time: Avaliable: Sold: MoneyTaken:")
     print("trains up")
-    print("A",train1[0], train1[1]*seatsPerCoach-train4[2], train1[2], train1[3])
-    print("B",train2[0], train2[1]*seatsPerCoach-train4[2], train2[2], train2[3])
-    print("C",train3[0], train3[1]*seatsPerCoach-train4[2], train3[2], train3[3])
+    print("A",train1[0], train1[1]*seatsPerCoach-train1[2], train1[2], train1[3])
+    print("B",train2[0], train2[1]*seatsPerCoach-train2[2], train2[2], train2[3])
+    print("C",train3[0], train3[1]*seatsPerCoach-train3[2], train3[2], train3[3])
     print("D",train4[0], train4[1]*seatsPerCoach-train4[2], train4[2], train4[3])
     print("trains down")
-    print("AB",train1B[0], train1B[1]*seatsPerCoach-train4[2], train1B[2], train1B[3])
-    print("BB",train2B[0], train2B[1]*seatsPerCoach-train4[2], train2B[2], train2B[3])
-    print("CB",train3B[0], train3B[1]*seatsPerCoach-train4[2], train3B[2], train3B[3])
-    print("DB",train4B[0], train4B[1]*seatsPerCoach-train4[2], train4B[2], train4B[3])
+    print("AB",train1B[0], train1B[1]*seatsPerCoach-train1B[2], train1B[2], train1B[3])
+    print("BB",train2B[0], train2B[1]*seatsPerCoach-train2B[2], train2B[2], train2B[3])
+    print("CB",train3B[0], train3B[1]*seatsPerCoach-train3B[2], train3B[2], train3B[3])
+    print("DB",train4B[0], train4B[1]*seatsPerCoach-train4B[2], train4B[2], train4B[3])
 
 def checkNumbers():
     while True:
         displayBoard()
         NumTickets = input("How many tickets are you booking?(CHECK AVALABILITY:")
-        if NumTickets >
+        if NumTickets <= chosenTrain[1]*seatsPerCoach-chosenTrain[2] and NumTickets <= chosenTrainDown[1]*seatsPerCoach-chosenTrainDown[2]
 
 def checkTiming():
     if chosenTrainDown[0] <= chosenTrain[0]:
