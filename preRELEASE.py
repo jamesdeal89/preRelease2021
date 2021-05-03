@@ -34,13 +34,37 @@ def displayBoard():
     print("CB",train3B[0], train3B[1]*seatsPerCoach-train3B[2], train3B[2], train3B[3])
     print("DB",train4B[0], train4B[1]*seatsPerCoach-train4B[2], train4B[2], train4B[3])
 
+def calCost():
+    print("the total of cost of this trip, including group discounts, is:")
+    if NumTickets < 10:
+        costUp = NumTickets * price
+        costDown = NumTickkets * price
+        print(costUp + costDown)
+        input()
+        chosenTrain[3] += costUp
+        chosenTrainDown[3] += costDown
+        displayBoard()
+        exit()
+    elif NumTickets >= 10:
+        discounts = NumTickets // 10
+        costUp = NumTickets * price - discounts * price
+        costDown = NumTickets * price - discounts * price
+        print(costUp + costDown)
+        input()
+        chosenTrain[3] += costUp
+        chosenTrainDown[3] += costDown
+        displayBoard()
+        exit()
+
 def checkNumbers():
     while True:
         displayBoard()
-        NumTickets = input("How many tickets are you booking?(CHECK AVALABILITY:")
+        global NumTickets
+        NumTickets = int(input("How many tickets are you booking?(CHECK AVALABILITY):"))
         if NumTickets <= chosenTrain[1]*seatsPerCoach-chosenTrain[2] and NumTickets <= chosenTrainDown[1]*seatsPerCoach-chosenTrainDown[2]:
             chosenTrain[2] += NumTickets
             chosenTrainDown[2] += NumTickets
+            calCost()
         else:
             print("that number of passengers is not possible, check avalability again and enter a new number")
             input()
