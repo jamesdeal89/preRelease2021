@@ -39,7 +39,8 @@ def endOfDay():
     displayBoard()
     print("The total money for the day: " + str(train1[3] + train2[3] + train3[3] + train4[3] + train1B[3] + train2B[3] + train3B[3] + train4B[3]))
     print("The total passengers for the day: " + str(train1[2] + train2[2] + train3[2] + train4[2] + train1B[2] + train2B[2] + train3B[2] + train4B[2]))
-
+    input()
+    exit()
 
 def calCost():
     print("the total of cost of this trip, including group discounts, is:")
@@ -50,17 +51,15 @@ def calCost():
         input()
         chosenTrain[3] += costUp
         chosenTrainDown[3] += costDown
-        displayBoard()
-        while true:
+        while True:
             answerEOD = input("is it the end of the day?(Y or N):")
-            if answerEOD == "Y" or "y":
+            if answerEOD == "Y" or answerEOD == "y":
                 endOfDay()
-            elif answerEOD == "N" or "n":
+            if answerEOD == "N" or answerEOD == "n":
                 Begin()
             else:
                 print("Either Y or N only. Try again")
                 input()
-        exit()
     elif NumTickets >= 10:
         discounts = NumTickets // 10
         costUp = NumTickets * price - discounts * price
@@ -69,9 +68,15 @@ def calCost():
         input()
         chosenTrain[3] += costUp
         chosenTrainDown[3] += costDown
-        displayBoard()
-        endOfDay()
-        exit()
+        while True:
+            answerEOD = input("is it the end of the day?(Y or N):")
+            if answerEOD == "Y" or "y":
+                endOfDay()
+            if answerEOD == "N" or "n":
+                Begin()
+            else:
+                print("Either Y or N only. Try again")
+                input()
 
 def checkNumbers():
     while True:
@@ -119,6 +124,7 @@ def bookingDown():
 
 def Begin():
     while True:
+        global chosenTrain
         displayBoard()
         print("welcome to the ticket booking system:")
         trainUp = input("chose train code:")
@@ -138,4 +144,4 @@ def Begin():
             print("please select only the code of the UP train and in CAPITALS")
             input()
 
-    
+Begin()
