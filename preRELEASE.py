@@ -51,6 +51,7 @@ def calCost():
         chosenTrain[3] += costUp
         chosenTrainDown[3] += costDown
         displayBoard()
+        endOfDay()
         exit()
     elif NumTickets >= 10:
         discounts = NumTickets // 10
@@ -61,6 +62,7 @@ def calCost():
         chosenTrain[3] += costUp
         chosenTrainDown[3] += costDown
         displayBoard()
+        endOfDay()
         exit()
 
 def checkNumbers():
