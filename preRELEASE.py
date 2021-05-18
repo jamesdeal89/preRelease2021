@@ -34,6 +34,13 @@ def displayBoard():
     print("CB",train3B[0], train3B[1]*seatsPerCoach-train3B[2], train3B[2], train3B[3])
     print("DB",train4B[0], train4B[1]*seatsPerCoach-train4B[2], train4B[2], train4B[3])
 
+def endOfDay():
+    print("end of the day display")
+    displayBoard()
+    print("The total money for the day: " + train1[3] + tran2[3] + train3[3] + train4[3] + train1B[3] + train2B[3] + train3B[3] + train4B[3])
+    print("The total passengers for the day: " + train1[2] + tran2[2] + train3[2] + train4[2] + train1B[2] + train2B[2] + train3B[2] + train4B[2])
+
+
 def calCost():
     print("the total of cost of this trip, including group discounts, is:")
     if NumTickets < 10:
