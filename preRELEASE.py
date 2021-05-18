@@ -37,8 +37,8 @@ def displayBoard():
 def endOfDay():
     print("end of the day display")
     displayBoard()
-    print("The total money for the day: " + train1[3] + tran2[3] + train3[3] + train4[3] + train1B[3] + train2B[3] + train3B[3] + train4B[3])
-    print("The total passengers for the day: " + train1[2] + tran2[2] + train3[2] + train4[2] + train1B[2] + train2B[2] + train3B[2] + train4B[2])
+    print("The total money for the day: " + str(train1[3] + train2[3] + train3[3] + train4[3] + train1B[3] + train2B[3] + train3B[3] + train4B[3]))
+    print("The total passengers for the day: " + str(train1[2] + train2[2] + train3[2] + train4[2] + train1B[2] + train2B[2] + train3B[2] + train4B[2]))
 
 
 def calCost():
@@ -51,7 +51,15 @@ def calCost():
         chosenTrain[3] += costUp
         chosenTrainDown[3] += costDown
         displayBoard()
-        endOfDay()
+        while true:
+            answerEOD = input("is it the end of the day?(Y or N):")
+            if answerEOD == "Y" or "y":
+                endOfDay()
+            elif answerEOD == "N" or "n":
+                Begin()
+            else:
+                print("Either Y or N only. Try again")
+                input()
         exit()
     elif NumTickets >= 10:
         discounts = NumTickets // 10
@@ -108,24 +116,26 @@ def bookingDown():
             print("please type in CAPTIALS and only back trains with 'B' appended")
             input()
 
-while True:
-    displayBoard()
-    print("welcome to the ticket booking system:")
-    trainUp = input("chose train code:")
-    if trainUp == "A":
-        chosenTrain = train1
-        bookingDown()
-    elif trainUp == "B":
-        chosenTrain = train2
-        bookingDown()
-    elif trainUp == "C":
-        chosenTrain = train3
-        bookingDown()
-    elif trainUp == "D":
-        chosenTrain = train4
-        bookingDown()
-    else:
-        print("please select only the code of the UP train and in CAPITALS")
-        input()
+
+def Begin():
+    while True:
+        displayBoard()
+        print("welcome to the ticket booking system:")
+        trainUp = input("chose train code:")
+        if trainUp == "A":
+            chosenTrain = train1
+            bookingDown()
+        elif trainUp == "B":
+            chosenTrain = train2
+            bookingDown()
+        elif trainUp == "C":
+            chosenTrain = train3
+            bookingDown()
+        elif trainUp == "D":
+            chosenTrain = train4
+            bookingDown()
+        else:
+            print("please select only the code of the UP train and in CAPITALS")
+            input()
 
     
